@@ -3,6 +3,7 @@ if (!process.env.KEY || !process.env.WEBHOOK) {
     throw new Error({
         KEY: process.env.KEY || null,
         WEBHOOK: process.env.WEBHOOK || null,
+        USERID: process.env.USERID || null,
     });
 }
 
@@ -10,7 +11,7 @@ const { Medal } = require('medal-js');
 const { Webhook } = require('simple-discord-webhooks');
 const discord = new Webhook(process.env.WEBHOOK);
 
-const options = { userId: 14235704, limit: 1 };
+const options = { userId: process.env.USERID, limit: 1 };
 const medal = new Medal(process.env.KEY);
 
 (async () => {
