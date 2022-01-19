@@ -25,6 +25,7 @@ const medal = new Medal(process.env.KEY);
     const initialCheckObject = i.data.contentObjects[0];
 
     // Send out the latest tracked clip to the webhook.
+    console.log('Latest clip ID: ', initialCheckObject.contentId);
     discord.send(initialCheckObject.directClipUrl);
 
     setInterval(() => {
