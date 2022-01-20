@@ -22,24 +22,20 @@ const medal = new Medal(process.env.KEY);
 
 (async () => {
     const i = await medal.latest(options);
-    const initialCheckObject = i.data.contentObjects[0];
+    let firstClipObj = i.data.contentObjects[0];
 
     // Send out the latest tracked clip to the webhook.
-    console.log('Latest clip ID: ', initialCheckObject.contentId);
-    discord.send(initialCheckObject.directClipUrl);
+    console.log('Latest clip ID: ', firstClipObj.contentId);
+    discord.send(firstClipObj.directClipUrl);
 
     setInterval(() => {
         medal.latest(options).then((r) => {
-            const latestCheckObject = r.data.contentObjects[0];
+            let clipNew = r.data.contentObjects[0];
 
-            switch (true) {
-                case initialCheckObject.contentId !== latestCheckObject.contentId:
-                    console.log('New clip detected: ', latestCheckObject.directClipUrl);
-                    discord.send(latestCheckObject.directClipUrl);
-                    break;
-
-                default:
-                    break;
+            if (clipNew.contentId !== firstClipObj.contentId) {
+                firstClipObj = clipNew;
+                console.log('New clip detected: ', clipNew.directClipUrl);
+                discord.send(clipNew.directClipUrl);
             }
         });
     }, Number(process.env.INTERVAL) || 30 * 1000);
