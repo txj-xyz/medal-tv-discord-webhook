@@ -22,6 +22,9 @@ INTERVAL=15000 (Optional | Default: 15 seconds | Format: milliseconds)
 npm i; npm start
 ```
 
+# Example:
+![](https://cdn.discordapp.com/attachments/918670717753630822/935240827230367784/ej54VGdljN7qojsRcSkb.png)
+
 # Docker:
 
 ```
