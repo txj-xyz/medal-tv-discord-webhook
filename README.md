@@ -9,3 +9,17 @@ WEBHOOK="https://discord.com/webhook/url/here"
 USERID=14235704
 INTERVAL=15000 (Optional | Default: 15 seconds | Format: milliseconds)
 ```
+
+
+# Usage:
+
+```
+npm i; npm start
+```
+
+# Docker:
+
+```
+docker build -t medal-tv-discord-webhook:latest .
+docker run -d medal-tv-discord-webhook:latest
+```
