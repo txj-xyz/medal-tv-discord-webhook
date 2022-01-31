@@ -4,13 +4,15 @@
   "description": "",
   "main": "medal.js",
   "scripts": {
-    "start": "node medal.js"
+    "start": "node medal.js",
+    "build": "pkg --compress=Gzip -t node17-linux-x64,node17-macos-x64,node17-win-x64 -o \"medal-tv-webhook\" medal.js"
   },
   "author": "TXJ",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^15.0.0",
+    "conf": "^10.1.1",
     "medal-js": "^1.0.4",
+    "prompt": "^1.2.1",
     "simple-discord-webhooks": "^1.1.1"
   }
 }
