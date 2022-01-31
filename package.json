@@ -9,6 +9,7 @@
   "author": "TXJ",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^15.0.0",
     "medal-js": "^1.0.4",
     "simple-discord-webhooks": "^1.1.1"
   }
