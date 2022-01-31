@@ -1,17 +1,4 @@
-// Check ENV Vars before starting.
-if (!process.env.KEY || !process.env.WEBHOOK || !process.env.USERID) {
-    throw new Error(
-        JSON.stringify(
-            {
-                KEY: process.env.KEY || null,
-                WEBHOOK: process.env.WEBHOOK || null,
-                USERID: process.env.USERID || null,
-            },
-            null,
-            2
-        )
-    );
-}
+require('dotenv').config()
 
 const { Medal } = require('medal-js');
 const { Webhook } = require('simple-discord-webhooks');
