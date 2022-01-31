@@ -8,6 +8,8 @@ You neeed to obtain a Public or Private API Key from here https://docs.medal.tv/
 
 You can obtain your `USERID` by visiting a clip and going to the profile, in the URL will be the User ID
 
+
+`.env` Configuration file
 ```
 KEY="Medal API Key"
 WEBHOOK="https://discord.com/webhook/url/here"
@@ -22,12 +24,12 @@ INTERVAL=15000 (Optional | Default: 15 seconds | Format: milliseconds)
 npm i; npm start
 ```
 
-# Example:
-![](https://cdn.discordapp.com/attachments/918670717753630822/935240827230367784/ej54VGdljN7qojsRcSkb.png)
-
 # Docker:
 
 ```
 docker build -t medal-tv-discord-webhook:latest .
 docker run -d medal-tv-discord-webhook:latest
 ```
+
+# Example:
+![](https://cdn.discordapp.com/attachments/918670717753630822/935240827230367784/ej54VGdljN7qojsRcSkb.png)
